@@ -1,0 +1,20 @@
+applications:
+  - name: customer-project-frontend-old
+    path: .
+    routes:
+      - route: customer-project-frontend-old.cfapps.us10-001.hana.ondemand.com
+    memory: 256M
+    disk_quota: 512M
+    instances: 1
+    buildpacks:
+      - nodejs_buildpack
+    command: npm start
+    health-check-type: http
+    health-check-http-endpoint: /
+    env:
+      NODE_ENV: production
+      NPM_CONFIG_PRODUCTION: "false"
+      VITE_API_PROXY_TARGET: http://localhost:5000
+      VITE_DEMAND_REVENUE_API_PROXY_TARGET: http://localhost:5000
+      # VITE_API_PROXY_TARGET: https://customer-project-backend-old.cfapps.us10-001.hana.ondemand.com
+      # VITE_DEMAND_REVENUE_API_PROXY_TARGET: https://customer-project-backend-old.cfapps.us10-001.hana.ondemand.com

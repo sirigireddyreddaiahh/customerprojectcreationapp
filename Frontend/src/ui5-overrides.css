@@ -1,0 +1,1248 @@
+/* Targeted refinements for the UI5-style shell and shared select controls. */
+.ui5-user-menu {
+  display: none !important;
+}
+
+
+
+.sidebar {
+  inset: 60px auto 0 0 !important;
+  overflow: hidden;
+}
+
+.sidebar::after {
+  display: none;
+}
+
+.sidebar-nav {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-button.active::before {
+  left: -20px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  transform: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.glass-dropdown-trigger-caret {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  background: transparent;
+  color: #173b72;
+}
+
+.glass-dropdown-trigger-caret::after {
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.glass-dropdown.open .glass-dropdown-trigger-caret::after {
+  transform: rotate(225deg) translate(-1px, -1px);
+}
+
+/* The two primary destinations behave like navigation, not a four-step wizard. */
+.global-page-header {
+  position: fixed !important;
+  z-index: 21;
+  top: 8px;
+  right: 86px;
+  left: 0;
+  display: grid !important;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 12px;
+  height: 44px;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  /* Keep the transparent header grid from covering the shell back button. */
+  pointer-events: none;
+}
+
+.global-page-header > .global-page-tabs {
+  pointer-events: auto;
+}
+
+.content {
+  padding-top: 8px !important;
+}
+
+.global-page-heading {
+  display: none !important;
+}
+
+.global-back-button {
+  min-width: 68px;
+  width: 68px;
+  min-height: 68px;
+  height: 68px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: start;
+  gap: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #344f4b;
+  box-shadow: none;
+  font: inherit;
+  font-size: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 170ms ease, background-color 170ms ease, border-color 170ms ease, box-shadow 170ms ease;
+}
+
+.global-back-button span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  line-height: 1;
+  transition: transform 170ms ease;
+}
+
+.global-back-button span svg {
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.global-back-button:hover:not(:disabled) {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.global-back-button:hover:not(:disabled) span {
+  transform: translateX(-3px);
+}
+
+.global-back-button:active:not(:disabled) {
+  transform: translateY(0) scale(0.97);
+}
+
+.global-back-button:disabled {
+  border-color: transparent;
+  background: transparent;
+  color: #aab5c2;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.ui5-shellbar-start { margin-left: 0; gap: 2px; }
+
+.global-page-header > .global-page-heading { display: none !important; }
+.global-page-header > .global-page-tabs { grid-column: 2; justify-self: center; }
+
+.ui5-shell-logo {
+  width: 52px;
+}
+
+.ui5-shell-logo-home { padding: 0; }
+
+.ui5-product-name {
+  margin-left: -6px;
+  color: #17365f;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Keep screen and section headings aligned with the primary navigation type scale. */
+.content h1,
+.content h2,
+.content .page-heading h1,
+.content .card h2,
+.content .projects-title h2,
+.content .ui5-card-heading h2,
+.content .section-head h2 {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+}
+
+.global-page-header + .project-view-sections {
+  margin-top: 4px !important;
+}
+
+.tabs.global-page-tabs {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(190px, 1fr)) !important;
+  gap: 5px !important;
+  width: fit-content;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  padding: 5px !important;
+  border: 1px solid #d8e2ef !important;
+  border-radius: 14px !important;
+  background: #eef3f8 !important;
+  box-shadow: inset 0 1px 2px rgba(18, 52, 91, 0.04) !important;
+  overflow: hidden !important;
+}
+
+.tabs.global-page-tabs.single-tab {
+  grid-template-columns: minmax(190px, 1fr) !important;
+}
+
+.global-page-tabs .tab,
+.tabs.global-page-tabs .tab {
+  min-height: 44px !important;
+  padding: 0 22px !important;
+  border: 0 !important;
+  border-radius: 10px !important;
+  background: transparent !important;
+  background-image: none !important;
+  color: #48617f;
+  text-align: center;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+
+.global-page-tabs .tab::before,
+.global-page-tabs .tab::after {
+  display: none !important;
+  content: none !important;
+}
+
+.global-page-tabs .tab:hover {
+  background: rgba(255, 255, 255, 0.62) !important;
+  color: #075fab;
+}
+
+.global-page-tabs .tab.active {
+  background: #ffffff !important;
+  color: #0064d9;
+  box-shadow: 0 2px 8px rgba(30, 72, 116, 0.13) !important;
+}
+
+.global-page-tabs .tab:focus-visible {
+  outline: 3px solid rgba(0, 112, 242, 0.24);
+  outline-offset: -2px;
+}
+
+.recent-projects-card .recent-project-id {
+  font-size: 12px !important;
+}
+
+.recent-projects-card .all-projects-scroll .data-table tbody td:not(:first-child) {
+  font-family: "72", "72full", "Segoe UI", Arial, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+.recent-projects-card .all-projects-scroll .data-table thead th {
+  font-family: "72", "72full", "Segoe UI", Arial, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+
+.recent-projects-card .ui5-card-heading {
+  min-height: 26px;
+  margin-bottom: 3px;
+}
+
+.recent-projects-card .ui5-card-heading h2 {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+.recent-projects-card .overview-actions {
+  gap: 5px;
+}
+
+.recent-projects-card .overview-actions .settings-icon-button {
+  width: 26px;
+  height: 26px;
+  font-size: 12px;
+}
+
+.recent-projects-card .overview-actions .primary {
+  min-height: 28px;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-size: 11px;
+}
+
+.recent-projects-card .project-access-filters {
+  gap: 10px;
+  margin-bottom: 7px !important;
+  position: sticky;
+  top: 68px;
+  z-index: 19;
+  padding: 8px 0;
+  background: #fff;
+}
+
+.recent-projects-card .project-filter-field {
+  gap: 2px;
+  font-size: 11px;
+}
+
+.recent-projects-card .project-filter-control input {
+  height: 28px;
+}
+
+.recent-projects-card .value-help-button {
+  height: 22px;
+}
+
+@media (max-width: 900px) {
+  .global-page-header {
+    position: relative !important;
+    top: auto;
+    right: auto;
+    left: auto;
+    height: auto;
+    margin-bottom: 4px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .global-page-header {
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: 7px;
+  }
+
+  .global-back-button {
+    min-width: 52px;
+    width: 52px;
+    min-height: 52px;
+    height: 52px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .content {
+    padding-top: 6px !important;
+  }
+
+  .tabs.global-page-tabs {
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .tabs.global-page-tabs.single-tab {
+    width: fit-content;
+    grid-template-columns: minmax(190px, 1fr) !important;
+  }
+
+  .global-page-tabs .tab,
+  .tabs.global-page-tabs .tab {
+    min-width: 0 !important;
+    padding: 0 10px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Responsive layout rules shared by every screen and portal-rendered dialog. */
+html,
+body,
+#root {
+  min-width: 0;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  width: auto;
+  overflow-x: clip;
+}
+
+.app-shell,
+.app-main,
+.content,
+.card,
+.workspace-content,
+.creation-primary-sections {
+  min-width: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow: clip;
+}
+
+.content {
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+.app-main > .content {
+  max-width: 1920px !important;
+}
+
+.table-wrap,
+.all-projects-scroll,
+.approval-inbox-table,
+.billing-table .table-wrap,
+.budget-table .table-wrap,
+.sap-detail-table .table-wrap,
+.work-item-assignment-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.data-table {
+  max-width: 100%;
+}
+
+.project-section,
+.workspace-content > .card,
+.project-entry-card,
+.recent-projects-card,
+.approval-inbox-card {
+  min-width: 0;
+}
+
+.work-package-modal,
+.small-popup,
+.column-modal,
+.dialog,
+.project-type-modal,
+.workforce-modal {
+  box-sizing: border-box;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.project-field,
+.field,
+.business-partner-selector,
+.responsibility-row > *,
+.project-form-grid > *,
+.workspace-content .form-grid > * {
+  min-width: 0;
+}
+
+.project-field input,
+.project-field select,
+.project-field textarea,
+.project-field .glass-dropdown-trigger,
+.field input,
+.field select,
+.field textarea,
+.field .glass-dropdown-trigger,
+.business-partner-trigger,
+.workforce-search {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.project-filter-control,
+.project-access-filters > *,
+.project-submit-actions,
+.overview-actions,
+.billing-table-actions,
+.detail-section-header-actions {
+  min-width: 0;
+}
+
+.approval-summary-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sap-metric-row {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  gap: 14px 22px;
+}
+
+.sap-summary-groups {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr));
+  gap: 20px 30px;
+}
+
+@media (min-width: 1600px) {
+  .content {
+    padding-right: clamp(34px, 3vw, 72px);
+    padding-left: clamp(34px, 3vw, 72px);
+  }
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    margin-left: 0 !important;
+  }
+
+  .content {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .project-entry-actions {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .project-entry-input {
+    min-width: min(100%, 280px);
+  }
+
+  .project-access-filters {
+    position: static;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .recent-projects-card .project-access-filters {
+    position: static;
+  }
+
+  .work-package-modal-backdrop,
+  .workforce-modal-backdrop,
+  .column-modal-backdrop,
+  .small-popup-backdrop,
+  .dialog-backdrop,
+  .project-type-backdrop {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .approval-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 1100px) {
+  .recent-projects-card .project-access-filters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .all-projects-scroll .data-table {
+    min-width: 900px;
+  }
+
+  .project-section .project-field input,
+  .project-section .project-field select,
+  .project-section .project-field textarea,
+  .project-section .project-field .glass-dropdown-trigger,
+  .project-section .business-partner-trigger,
+  .workspace-content .workspace-detail-section .field input,
+  .workspace-content .workspace-detail-section .field select,
+  .workspace-content .workspace-detail-section .field textarea,
+  .workspace-content .workspace-detail-section .field .glass-dropdown-trigger,
+  .field input,
+  .field select,
+  .field textarea,
+  .field .glass-dropdown-trigger,
+  .business-partner-trigger,
+  .project-filter-control input,
+  .project-access-filters input,
+  .filters input,
+  .filters select {
+    min-height: 40px !important;
+    height: auto;
+    font-size: 14px !important;
+  }
+
+  .project-section .project-field input,
+  .project-section .project-field select,
+  .project-section .project-field .glass-dropdown-trigger,
+  .project-section .business-partner-trigger {
+    height: 40px !important;
+  }
+
+  .recent-projects-card .project-filter-control input {
+    height: 40px !important;
+    min-height: 40px !important;
+  }
+
+  .recent-projects-card .value-help-button {
+    width: 36px;
+    height: 36px;
+    min-height: 36px;
+  }
+
+  .tabs .workspace-tab,
+  .project-submit-actions > button,
+  .form-actions > button,
+  .recent-projects-card .overview-actions > button {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ui5-shellbar {
+    height: 56px;
+    padding-right: 10px;
+  }
+
+  .ui5-shellbar-start,
+  .ui5-shellbar-actions {
+    gap: 4px;
+  }
+
+  .ui5-shell-logo {
+    width: 44px;
+    height: 34px;
+  }
+
+  .ui5-product-name {
+    margin-left: -3px;
+    font-size: 12px;
+  }
+
+  .ui5-shellbar-actions button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ui5-user-avatar {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+
+  .app-main {
+    padding-top: 56px;
+  }
+
+  .content {
+    padding: 8px 14px 24px !important;
+  }
+
+  .content h1,
+  .content h2,
+  .content .page-heading h1,
+  .content .card h2,
+  .content .projects-title h2,
+  .content .ui5-card-heading h2,
+  .content .section-head h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .global-page-header {
+    width: 100%;
+    margin-bottom: 12px !important;
+  }
+
+  .global-page-header > .global-page-tabs {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .tabs.global-page-tabs.single-tab {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .global-page-tabs .tab,
+  .tabs.global-page-tabs .tab {
+    min-height: 44px !important;
+    height: auto;
+    padding: 8px 6px !important;
+    font-size: 12px !important;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .global-page-tabs .tab:only-child,
+  .global-page-tabs.single-tab .tab {
+    grid-column: 1 / -1;
+  }
+
+  .project-entry-card,
+  .recent-projects-card,
+  .projects-card,
+  .approval-inbox-card,
+  .workspace-content > .card {
+    padding: 14px !important;
+  }
+
+  .ui5-card-heading,
+  .sap-project-headline-row,
+  .projects-title,
+  .approval-stage-actions,
+  .project-submit-bar,
+  .detail-section-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .ui5-card-heading {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .ui5-heading-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  .overview-actions,
+  .project-submit-actions,
+  .billing-table-actions,
+  .detail-section-header-actions .work-package-actions,
+  .form-actions,
+  .project-entry-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .overview-actions > button,
+  .project-submit-actions > button,
+  .form-actions > button,
+  .project-entry-actions > button {
+    min-height: 44px;
+  }
+
+  .recent-projects-card .project-filter-control input {
+    min-height: 44px !important;
+    height: 44px !important;
+    padding-right: 48px;
+    font-size: 16px !important;
+  }
+
+  .recent-projects-card .value-help-button {
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .recent-projects-card .overview-actions .settings-icon-button,
+  .recent-projects-card .overview-actions .primary {
+    min-width: 44px;
+    min-height: 44px;
+    height: 44px;
+  }
+
+  .project-entry-input {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .project-access-filters {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding-top: 4px;
+  }
+
+  .recent-projects-card .project-access-filters {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-filter-field {
+    min-width: 0;
+  }
+
+  .project-access-filters input,
+  .project-access-filters select,
+  .project-filter-control input,
+  .project-filter-control select,
+  .filters input,
+  .filters select {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .project-form-grid,
+  .tone-blush .project-form-grid,
+  .workspace-content .workspace-detail-section .form-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px;
+  }
+
+  .project-form-grid > .project-field,
+  .project-form-grid > div,
+  .workspace-content .workspace-detail-section .form-grid > .field {
+    width: 100%;
+    max-width: none;
+  }
+
+  .project-section .project-field input,
+  .project-section .project-field select,
+  .project-section .project-field textarea,
+  .project-section .project-field .glass-dropdown-trigger,
+  .project-section .business-partner-trigger,
+  .workspace-content .workspace-detail-section .field input,
+  .workspace-content .workspace-detail-section .field select,
+  .workspace-content .workspace-detail-section .field textarea,
+  .workspace-content .workspace-detail-section .field .glass-dropdown-trigger,
+  .field input,
+  .field select,
+  .field textarea,
+  .field .glass-dropdown-trigger,
+  .business-partner-trigger,
+  .project-filter-control input,
+  .project-access-filters input,
+  .filters input,
+  .filters select {
+    min-height: 44px !important;
+    height: auto !important;
+    font-size: 16px !important;
+  }
+
+  body .content .project-section .project-field .glass-dropdown-trigger,
+  body .content .project-section .project-field .glass-dropdown-trigger-label,
+  body .content .project-section .business-partner-trigger,
+  body .content .workspace-content .workspace-detail-section .field .glass-dropdown-trigger,
+  body .content .workspace-content .workspace-detail-section .field .glass-dropdown-trigger-label {
+    font-size: 16px !important;
+  }
+
+  .project-section .project-field input,
+  .project-section .project-field select,
+  .project-section .project-field .glass-dropdown-trigger,
+  .project-section .business-partner-trigger,
+  .workspace-content .workspace-detail-section .field input,
+  .workspace-content .workspace-detail-section .field select,
+  .workspace-content .workspace-detail-section .field .glass-dropdown-trigger {
+    height: 44px !important;
+  }
+
+  .project-section .project-field label,
+  .project-section .business-partner-selector label,
+  .workspace-content .workspace-detail-section .field label {
+    height: auto;
+    min-height: 16px;
+    margin-bottom: 5px;
+    font-size: 12px !important;
+    line-height: 1.3;
+  }
+
+  .project-description-section textarea,
+  .workspace-content .workspace-detail-section .field textarea {
+    min-height: 84px;
+  }
+
+  .responsibility-column-headings {
+    display: none;
+  }
+
+  .responsibility-row,
+  .project-responsibility-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 8px;
+  }
+
+  .responsibility-row .project-field,
+  .responsibility-business-partner,
+  .project-responsibility-row > * {
+    width: 100%;
+    max-width: none;
+  }
+
+  .project-submit-bar {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .project-submit-bar > *,
+  .project-submit-actions > button {
+    flex: 1 1 140px;
+  }
+
+  .project-fetch {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .project-fetch input {
+    flex: 1 1 180px;
+    min-width: 0;
+  }
+
+  .tabs.workspace-tabs {
+    display: flex;
+    gap: 4px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 6px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+
+  .tabs .workspace-tab {
+    min-height: 44px;
+    flex: 0 0 auto;
+    padding: 0 9px;
+    white-space: nowrap;
+  }
+
+  .approval-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .approval-summary-card {
+    min-height: 76px;
+    padding: 12px;
+  }
+
+  .approval-summary-card span {
+    font-size: 12px;
+    line-height: 1.35;
+  }
+
+  .approval-inbox-heading p {
+    margin: 10px 0 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .approval-inbox-tabs {
+    gap: 18px;
+    margin: 12px 0;
+  }
+
+  .approval-inbox-table {
+    overflow-x: auto;
+  }
+
+  .approval-inbox-table .data-table {
+    min-width: 690px;
+  }
+
+  .all-projects-scroll .data-table {
+    min-width: 760px;
+  }
+
+  .billing-table .data-table {
+    min-width: 1000px;
+  }
+
+  .budget-table .table-wrap,
+  .sap-detail-table .table-wrap {
+    overflow-x: auto;
+  }
+
+  .budget-table .data-table,
+  .sap-detail-table .data-table {
+    min-width: 760px;
+  }
+
+  .project-type-backdrop,
+  .dialog-backdrop,
+  .work-package-modal-backdrop,
+  .workforce-modal-backdrop,
+  .column-modal-backdrop,
+  .small-popup-backdrop {
+    box-sizing: border-box;
+    align-items: start;
+    justify-items: center;
+    padding: max(12px, env(safe-area-inset-top)) 12px max(12px, env(safe-area-inset-bottom));
+  }
+
+  .project-type-modal,
+  .dialog,
+  .work-package-modal,
+  .small-popup,
+  .column-modal,
+  .workforce-modal {
+    width: 100%;
+    max-width: 560px;
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+    margin-block: auto;
+  }
+
+  .project-type-options,
+  .billing-type-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .project-type-options button {
+    min-height: 76px;
+    grid-template-columns: 38px minmax(0, 1fr) 20px;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .project-type-icon {
+    width: 38px;
+    height: 38px;
+  }
+
+  .dialog-actions {
+    flex-wrap: wrap;
+  }
+
+  .dialog-actions > button {
+    min-width: 88px;
+    min-height: 40px !important;
+    height: auto !important;
+  }
+
+  .save-confirmation-content {
+    padding: 18px 16px;
+  }
+
+  .customer-picker-header,
+  .customer-picker-item {
+    grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, .8fr));
+    gap: 6px;
+  }
+
+  .sap-metric-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .sap-summary-groups {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .content {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
+  .ui5-product-name {
+    font-size: 11px;
+  }
+
+  .global-back-button {
+    min-width: 44px;
+    width: 44px;
+  }
+
+  .ui5-shellbar-actions button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ui5-user-avatar {
+    flex-basis: 30px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .approval-summary-card {
+    padding: 10px;
+  }
+
+  .save-confirmation-content {
+    gap: 9px;
+    padding: 16px 12px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .ui5-shellbar {
+    height: 52px;
+  }
+
+  .app-main {
+    padding-top: 52px;
+  }
+
+  .project-type-modal,
+  .dialog,
+  .work-package-modal,
+  .small-popup,
+  .column-modal,
+  .workforce-modal {
+    max-height: calc(100vh - 16px);
+    max-height: calc(100dvh - 16px);
+  }
+
+  .project-type-backdrop,
+  .dialog-backdrop,
+  .work-package-modal-backdrop,
+  .workforce-modal-backdrop,
+  .column-modal-backdrop,
+  .small-popup-backdrop {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .project-section .project-field input,
+  .project-section .project-field select,
+  .project-section .project-field textarea,
+  .project-section .project-field .glass-dropdown-trigger,
+  .project-section .business-partner-trigger,
+  .workspace-content .workspace-detail-section .field input,
+  .workspace-content .workspace-detail-section .field select,
+  .workspace-content .workspace-detail-section .field textarea,
+  .workspace-content .workspace-detail-section .field .glass-dropdown-trigger,
+  .field input,
+  .field select,
+  .field textarea,
+  .field .glass-dropdown-trigger,
+  .business-partner-trigger,
+  .project-filter-control input,
+  .project-access-filters input,
+  .filters input,
+  .filters select {
+    min-height: 44px !important;
+    height: 44px !important;
+    font-size: 16px !important;
+  }
+
+  .project-section .project-field textarea,
+  .workspace-content .workspace-detail-section .field textarea,
+  .field textarea {
+    height: auto !important;
+    min-height: 84px !important;
+  }
+
+  .tabs .workspace-tab,
+  .project-submit-actions > button,
+  .form-actions > button,
+  .overview-actions > button,
+  .project-entry-actions > button,
+  .billing-table-actions > button,
+  .detail-section-header-actions .work-package-actions > button {
+    min-height: 44px;
+  }
+
+  .recent-projects-card .value-help-button {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Keep native date and select controls readable in service work-package forms.
+   Safari retains wider intrinsic control sizing than Chromium on compact layouts. */
+.work-package-create-modal > .work-package-form-grid.service-work-package-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.work-package-create-modal > .work-package-form-grid > .field {
+  min-width: 0;
+}
+
+.work-package-create-modal .work-package-form-grid .field input,
+.work-package-create-modal .work-package-form-grid .field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0 !important;
+  max-width: 100%;
+}
+
+.work-package-create-modal .work-package-form-grid .field input[type="date"] {
+  padding-right: 5px !important;
+  padding-left: 7px !important;
+}
+
+@media (max-width: 900px) {
+  .work-package-create-modal > .work-package-form-grid.service-work-package-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .work-package-create-modal > .work-package-form-grid.service-work-package-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .work-package-create-modal .work-package-form-grid .field input,
+  .work-package-create-modal .work-package-form-grid .field select {
+    min-height: 44px !important;
+    height: 44px !important;
+    max-height: 44px !important;
+    font-size: 16px;
+  }
+}
+
+/* Use one consistent settings control across overview, workspace, and demand tables. */
+button.app-settings-button,
+button.app-settings-button:hover:not(:disabled),
+button.app-settings-button:focus-visible {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  position: relative !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  flex: 0 0 32px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  color: #0a6ed1 !important;
+  box-shadow: none !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  transform: none !important;
+}
+
+button.app-settings-button:hover:not(:disabled) {
+  background: #edf6ff !important;
+}
+
+button.app-settings-button:focus-visible {
+  outline: 2px solid #0a6ed1 !important;
+  outline-offset: 2px !important;
+}
+
+button.app-settings-button > svg {
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translate(-50%, -50%) !important;
+  flex: 0 0 24px !important;
+  fill: none !important;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+button.app-settings-button > svg circle {
+  fill: none;
+  stroke: currentColor;
+}
+
+.recent-projects-card .overview-actions .settings-icon-button.app-settings-button {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  min-height: 30px !important;
+}

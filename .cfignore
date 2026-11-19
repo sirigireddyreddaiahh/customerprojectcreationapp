@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.vscode/
+node_modules/
+Frontend/node_modules/
+Frontend/dist/
+Backend/node_modules/
+Backend/.env
+npm-debug.log*
